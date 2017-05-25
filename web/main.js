@@ -61,6 +61,10 @@
                 "url": "cocos.com", 
                 "ico": "http://7xnozu.com1.z0.glb.clouddn.com/cocos.png"
             },
+            { 
+                "url": "analytics.amplitude.com", 
+                "ico": "https://static.amplitude.com/lightning/df5dc37e09b44def92baef0735f85ea7664ec7af/favicon.ico"
+            },
         ]
     }
 
