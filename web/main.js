@@ -52,7 +52,12 @@
     }
 
     function addFavicon($li, src) {
-        $li.classList.remove('img')
+        for (var i = 0; i < $li.childNodes.length; i++) {
+            var node = $li.childNodes[i]
+            if (node.nodeName == 'IMG' && node.className == 'fav') {
+                $li.removeChild(node)
+            }
+        }
         
         var img = document.createElement('img')
         img.src = src
