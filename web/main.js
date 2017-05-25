@@ -12,13 +12,22 @@
     // init
     if (localStorage.version != version) {
         localStorage.version = version
-        localStorage.newWindow = 0
+        localStorage.newWindow = 1
         localStorage.searchEngine = 'https://www.baidu.com/s?wd='
-        localStorage[67] = 'https://www.coding.net'
-        localStorage[72] = 'https://huguotao.com'
-        localStorage[84] = 'https://www.taobao.com'
-        localStorage[86] = 'https://www.v2ex.com'
-        localStorage[87] = 'https://www.weibo.com'
+        localStorage[49] = "https://github.com/"
+        localStorage[50] = "https://www.teambition.com/"
+        localStorage[51] = "http://www.fabric.io/"
+        localStorage[52] = "https://analytics.amplitude.com/"
+        localStorage[65] = "http://www.jianshu.com/"
+        localStorage[67] = "http://www.cocos.com/docs/creator/api/"
+        localStorage[68] = "https://stackshare.io/"
+        localStorage[69] = "http://www.wzxjiang.com/"
+        localStorage[70] = "http://jiliguala.com/niuwa/forum/"
+        localStorage[81] = "https://www.v2ex.com/"
+        localStorage[83] = "https://speakerdeck.com/"
+        localStorage[84] = "http://t.swift.gg"
+        localStorage[87] = "https://exmail.qq.com/login"
+        localStorage[90] = "https://www.zhihu.com"
     }
 
     for (var i in $keys) {
