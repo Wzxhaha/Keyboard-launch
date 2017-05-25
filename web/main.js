@@ -43,7 +43,37 @@
     }
     $searchEngine.value = localStorage.searchEngine
 
+    function getSpecialDomains() {
+       return [
+            { 
+                "url": "fabric.io", 
+                "ico": "https://www.fabric.io/fabric.ico" 
+            },
+            { 
+                "url": "wzxjiang.com", 
+                "ico": "http://wzxjiang.com/img/favicon.ico" 
+            },
+            { 
+                "url": "t.swift.gg", 
+                "ico": "http://t.swift.gg/myfavicons/apple-touch-icon-57x57.png"
+            },
+            { 
+                "url": "cocos.com", 
+                "ico": "http://7xnozu.com1.z0.glb.clouddn.com/cocos.png"
+            },
+        ]
+    }
+
     function getFavicon(url) {
+        var specialDomains = getSpecialDomains()
+
+        for (var i = 0; i < specialDomains.length; i++) {
+            var domain = specialDomains[i]
+            if (url.indexOf(domain["url"]) > 0) {
+                return domain["ico"]
+            }
+        }
+
         return url.split('/').slice(0,3).join('/') + "/favicon.ico"
     }
 
