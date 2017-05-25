@@ -86,7 +86,7 @@ body {
 
 #keyboard ul li:hover, #keyboard ul li.keyDownLi {
     margin: 0px 5px;
-    border-bottom: 3px solid #fff;
+    /*border-bottom: 3px solid #fff;*/
     box-shadow: inset 0 0px 8px #333;
     -moz-box-shadow: inset 0 0px 8px #333;
     -webkit-box-shadow: inset 0 0px 8px #333;
