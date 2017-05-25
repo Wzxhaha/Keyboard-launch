@@ -11,6 +11,21 @@ body {
     font-family: Sans-serif;
 }
 
+body .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; 
+    background-size: cover; 
+    background-position: center; 
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    -webkit-filter: blur(30px);
+    filter: blur(20px);
+}
+
 /*-----------SEARCH-----------*/
 
 #search {
