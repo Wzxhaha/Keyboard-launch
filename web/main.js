@@ -105,11 +105,13 @@
     document.onkeyup = function(e) {
         var key = e.which || e.keyCode || 0,
             url = localStorage[key]
-        keyUp(key)
+
+        if (document.activeElement != $search) {
+            keyUp(key)
+        }
 
         if (url && key == keyCache && document.activeElement != $search) openUrl(url)
 
-        if (document.activeElement == $search) return
         keyCache = 0
     }
 
