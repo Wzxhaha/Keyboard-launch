@@ -30,14 +30,10 @@
         }
     }
 
-    function refreshIco() {
-        for (var i = 48; i < 91; i++) {
-            var url = localStorage[i]
-            if (url) addFavicon(keys[i]['li'], getFavicon(url))
-        }
+    for (var i = 48; i < 91; i++) {
+        var url = localStorage[i]
+        if (url) addFavicon(keys[i]['li'], getFavicon(url))
     }
-
-    refreshIco()
 
     // read settings
     if (~~localStorage.newWindow) {
@@ -51,14 +47,16 @@
         return url.split('/').slice(0,3).join('/') + "/favicon.ico"
     }
 
-    function addFavicon($li, src) {
+    function removeFavicon($li) {
         for (var i = 0; i < $li.childNodes.length; i++) {
             var node = $li.childNodes[i]
             if (node.nodeName == 'IMG' && node.className == 'fav') {
                 $li.removeChild(node)
             }
         }
-        
+    }
+
+    function addFavicon($li, src) {
         var img = document.createElement('img')
         img.src = src
         img.className = 'fav'
@@ -132,8 +130,11 @@
             url = prompt("请输入按键 " + name + " 对应的网址", localStorage[key] || '')
         if (url === null) return
         if (url && url.indexOf('http') != 0) url = 'http://' + url
+
+        var li = keys[key]['li']
+        removeFavicon(li)
         localStorage[key] = url
-        refreshIco()       
+        addFavicon(li, getFavicon(url))
     }
 
     $newWindow.onclick = function() {
