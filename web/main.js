@@ -97,6 +97,8 @@
                 $search.focus()
             }
         }
+
+        if (document.activeElement == $search) return
         keyDown(key)
     }
 
@@ -106,6 +108,8 @@
         keyUp(key)
 
         if (url && key == keyCache && document.activeElement != $search) openUrl(url)
+
+        if (document.activeElement == $search) return
         keyCache = 0
     }
 
