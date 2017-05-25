@@ -30,11 +30,14 @@
         }
     }
 
-    // set favicon
-    for (var i = 48; i < 91; i++) {
-        var url = localStorage[i]
-        if (url) addFavicon(keys[i]['li'], getFavicon(url))
+    function refreshIco() {
+        for (var i = 48; i < 91; i++) {
+            var url = localStorage[i]
+            if (url) addFavicon(keys[i]['li'], getFavicon(url))
+        }
     }
+
+    refreshIco()
 
     // read settings
     if (~~localStorage.newWindow) {
@@ -49,6 +52,8 @@
     }
 
     function addFavicon($li, src) {
+        $li.classList.remove('img')
+        
         var img = document.createElement('img')
         img.src = src
         img.className = 'fav'
@@ -123,7 +128,7 @@
         if (url === null) return
         if (url && url.indexOf('http') != 0) url = 'http://' + url
         localStorage[key] = url
-        location.reload()        
+        refreshIco()       
     }
 
     $newWindow.onclick = function() {
